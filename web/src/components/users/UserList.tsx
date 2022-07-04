@@ -6,14 +6,13 @@ const query = graphql`
   query UserList_Query {
     users {
       name
-      # email
+      email
     }
   }
 `;
 
 export const UserList:FC = () => {
-  const { users } = useLazyLoadQuery<UserList_Query>(query, {})
-  console.log(users)
+  const { users } = useLazyLoadQuery<UserList_Query>(query, {});
 
   return (
     <ul>
