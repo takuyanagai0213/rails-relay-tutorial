@@ -1,0 +1,11 @@
+overwrite: true
+schema: "./schema.graphql"
+generates:
+  src/__generated__/schema.ts:
+    config:
+      enumsAsTypes: true
+      futureProofUnions: true
+      futureProofEnums: true
+    plugins:
+      - "typescript"
+      - "typescript-operations"

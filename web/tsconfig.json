@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.extend.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "incremental": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "types": ["react/next", "react-dom/next"],
+    "target": "es5",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": false,
+    "module": "esnext",
+    "isolatedModules": true
+  },
+  "include": ["src", "typings", ".storybook"]
+}

@@ -1,19 +1,41 @@
 /**
- * @generated SignedSource<<8932a71fca93e4355af65ed301a1cdb7>>
+ * @generated SignedSource<<f567d0a6eac00a315363f6e7f7c438dd>>
  * @lightSyntaxTransform
  * @nogrep
  */
 
+/* tslint:disable */
 /* eslint-disable */
+// @ts-nocheck
 
-'use strict';
+import { ConcreteRequest, Query } from 'relay-runtime';
+export type UserList_Query$variables = {};
+export type UserList_QueryVariables = UserList_Query$variables;
+export type UserList_Query$data = {
+  readonly users: ReadonlyArray<{
+    readonly name: string | null;
+    readonly email: string | null;
+  }>;
+};
+export type UserList_QueryResponse = UserList_Query$data;
+export type UserList_Query = {
+  variables: UserList_QueryVariables;
+  response: UserList_Query$data;
+};
 
-var node = (function(){
+const node: ConcreteRequest = (function(){
 var v0 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
   "name": "name",
+  "storageKey": null
+},
+v1 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "email",
   "storageKey": null
 };
 return {
@@ -21,7 +43,7 @@ return {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppUserQuery",
+    "name": "UserList_Query",
     "selections": [
       {
         "alias": null,
@@ -31,7 +53,8 @@ return {
         "name": "users",
         "plural": true,
         "selections": [
-          (v0/*: any*/)
+          (v0/*: any*/),
+          (v1/*: any*/)
         ],
         "storageKey": null
       }
@@ -43,7 +66,7 @@ return {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "AppUserQuery",
+    "name": "UserList_Query",
     "selections": [
       {
         "alias": null,
@@ -54,6 +77,7 @@ return {
         "plural": true,
         "selections": [
           (v0/*: any*/),
+          (v1/*: any*/),
           {
             "alias": null,
             "args": null,
@@ -67,16 +91,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "41dc9afe21ba98958e9f4b6f5133ef0d",
+    "cacheID": "87a7ff0e65e751556294fe5471dd92e7",
     "id": null,
     "metadata": {},
-    "name": "AppUserQuery",
+    "name": "UserList_Query",
     "operationKind": "query",
-    "text": "query AppUserQuery {\n  users {\n    name\n    id\n  }\n}\n"
+    "text": "query UserList_Query {\n  users {\n    name\n    email\n    id\n  }\n}\n"
   }
 };
 })();
 
-node.hash = "47e8d0b533240af5028da90361aaa7f6";
+(node as any).hash = "65f34607c75c99cfbb5aa0238ef363e8";
 
-module.exports = node;
+export default node;

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "~/src/*": ["./src/*"],
+      "~/.storybook/*": ["./.storybook/*"]
+    }
+  }
+}
