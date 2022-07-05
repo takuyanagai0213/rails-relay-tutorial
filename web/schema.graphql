@@ -27,6 +27,14 @@ type DeleteUserPayload {
   user: User
 }
 
+type Group {
+  createdAt: ISO8601DateTime!
+  id: ID!
+  name: String
+  updatedAt: ISO8601DateTime!
+  users: [User!]!
+}
+
 """An ISO 8601-encoded datetime"""
 scalar ISO8601DateTime
 
@@ -73,6 +81,7 @@ type UpdateUserPayload {
 type User {
   createdAt: ISO8601DateTime!
   email: String
+  groups: [Group!]!
   id: ID!
   name: String
   updatedAt: ISO8601DateTime!

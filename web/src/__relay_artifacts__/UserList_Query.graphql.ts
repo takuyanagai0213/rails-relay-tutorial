@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f567d0a6eac00a315363f6e7f7c438dd>>
+ * @generated SignedSource<<5e7f89903d960a24d55d4f8117fcd790>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -15,6 +15,9 @@ export type UserList_Query$data = {
   readonly users: ReadonlyArray<{
     readonly name: string | null;
     readonly email: string | null;
+    readonly groups: ReadonlyArray<{
+      readonly name: string | null;
+    }>;
   }>;
 };
 export type UserList_QueryResponse = UserList_Query$data;
@@ -37,6 +40,13 @@ v1 = {
   "kind": "ScalarField",
   "name": "email",
   "storageKey": null
+},
+v2 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "id",
+  "storageKey": null
 };
 return {
   "fragment": {
@@ -54,7 +64,19 @@ return {
         "plural": true,
         "selections": [
           (v0/*: any*/),
-          (v1/*: any*/)
+          (v1/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Group",
+            "kind": "LinkedField",
+            "name": "groups",
+            "plural": true,
+            "selections": [
+              (v0/*: any*/)
+            ],
+            "storageKey": null
+          }
         ],
         "storageKey": null
       }
@@ -81,26 +103,33 @@ return {
           {
             "alias": null,
             "args": null,
-            "kind": "ScalarField",
-            "name": "id",
+            "concreteType": "Group",
+            "kind": "LinkedField",
+            "name": "groups",
+            "plural": true,
+            "selections": [
+              (v0/*: any*/),
+              (v2/*: any*/)
+            ],
             "storageKey": null
-          }
+          },
+          (v2/*: any*/)
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "87a7ff0e65e751556294fe5471dd92e7",
+    "cacheID": "55f9f65a05ff88ae610c75ec5c598104",
     "id": null,
     "metadata": {},
     "name": "UserList_Query",
     "operationKind": "query",
-    "text": "query UserList_Query {\n  users {\n    name\n    email\n    id\n  }\n}\n"
+    "text": "query UserList_Query {\n  users {\n    name\n    email\n    groups {\n      name\n      id\n    }\n    id\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "65f34607c75c99cfbb5aa0238ef363e8";
+(node as any).hash = "7bf9dcdc92ca9a6ea800f30c8af8a021";
 
 export default node;

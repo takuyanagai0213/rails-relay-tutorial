@@ -29,7 +29,8 @@
     "build": "yarn run relay && react-scripts build",
     "relay": "relay-compiler",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update-schema": "get-graphql-schema http:/localhost:3000/graphql > schema.graphql"
   },
   "eslintConfig": {
     "extends": [

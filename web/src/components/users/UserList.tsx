@@ -7,6 +7,9 @@ const query = graphql`
     users {
       name
       email
+      groups {
+        name
+      }
     }
   }
 `;
