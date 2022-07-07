@@ -3,7 +3,9 @@ import { graphql, useLazyLoadQuery } from "react-relay";
 import { UserCreate_Mutation } from "~/src/__relay_artifacts__/UserCreate_Mutation.graphql";
 
 const mutation = graphql`
-  mutation UserCreate_Mutation($input: CreateUserInput!) {
+  mutation UserCreate_Mutation(
+      $input: CreateUserInput!
+    ) {
     createUser (input: $input){
       user {
         id
@@ -16,6 +18,7 @@ const mutation = graphql`
 export const UserCreate:FC = () => {
   const name: string = "test";
   const email: string = "test@test.com";
+
   const { createUser } = useLazyLoadQuery<UserCreate_Mutation>(
     mutation,
     {
@@ -26,8 +29,6 @@ export const UserCreate:FC = () => {
     }
   )
   const user = createUser?.user;
-
-  console.log(user)
   return (
     <ul>
         <li>{user?.id}</li>
